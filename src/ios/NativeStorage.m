@@ -90,7 +90,7 @@
 			NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 			[defaults setInteger: anInt forKey:reference];
 			BOOL success = [defaults synchronize];
-			if(success) pluginResult = [CDVPluginResult resultWithStatus: CDVCommandStatus_OK messageAsNSInteger:anInt];
+			if(success) pluginResult = [CDVPluginResult resultWithStatus: CDVCommandStatus_OK messageAsInt:anInt];
 			else pluginResult = [CDVPluginResult resultWithStatus: CDVCommandStatus_ERROR messageAsString:@"Write has failed"];
 		}
 		else
@@ -109,7 +109,7 @@
 		if(reference!=nil)
 		{
 			NSInteger anInt = [[NSUserDefaults standardUserDefaults] integerForKey:reference];
-			pluginResult = [CDVPluginResult resultWithStatus: CDVCommandStatus_OK messageAsNSInteger:anInt];
+			pluginResult = [CDVPluginResult resultWithStatus: CDVCommandStatus_OK messageAsInt:anInt];
 		}
 		else
 		{
